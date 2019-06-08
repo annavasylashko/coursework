@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+</head>
+<body>
+    <input type="email">
+    <input type="password">
+    <button id="submit">Submit</button>
+
+    <script>
+        const submit = document.getElementById('submit');
+        submit.addEventListener('click', () => {
+            document.cookie = 'email=pavlovskyi.ve@gmail.com';
+            document.cookie = 'password=FFff1488';
+            fetch('user', {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                method: "POST",
+                body: JSON.stringify({"email": "pavlovskyi.ve@gmail.com", "password": "FFff1488"})
+            }).then(res => {
+                if (res.status='200') {
+                    window.location.replace('/todo.html');
+                } 
+            });
+        })
+    </script>
+</body>
+</html>

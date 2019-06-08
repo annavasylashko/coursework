@@ -1,0 +1,85 @@
+/*
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500&display=swap&subset=cyrillic');
+*/
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro&display=swap');
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    padding: 40px 0;
+    margin: 0;
+    text-align: center;
+    background-color: #eee;
+
+    /*
+    font-family: 'Roboto', sans-serif;
+    */
+    font-family: 'Source Serif Pro', serif;
+}
+
+p {
+    margin: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 10px;
+    width: 500px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+}
+
+#list-header h1{
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.note {
+    margin: 2px 0;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 25px;
+    border-radius: 3px;
+
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.note p {
+    font-size: .9em;
+
+    font-weight: 300;
+}
+
+.note p input {
+    margin: 8px 5px 8px 0;
+}
+
+.note:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.note.checked {
+    transition: all 1s cubic-bezier(.25,.8,.25,1);
+    transform: translateX(25px);
+    opacity: 0;
+}
+
+.note.checked p {
+    color: gray;
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+.note.checked:hover {
+    box-shadow: none;
+} 

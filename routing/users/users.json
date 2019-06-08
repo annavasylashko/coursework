@@ -1,0 +1,46 @@
+{
+    "anna.vasylashko123@gmail.com" : 
+    {
+        "password" : "Anna061001",
+        "notes" : 
+        [
+            "Sample Task To Do Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do",
+            "Sample Task To Do",
+            "Sample Task To Do Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do Sample Task To Do Sample Task To Do Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do Sample Task To Do"
+        ],
+        
+        "done": 
+        [
+            "Note That Is Already Done",
+            "Note That Is Already Done",
+            "Note That Is Already Done",
+            "Note That Is Already Done"
+        ]
+    },
+    "pavlovskyi.ve@gmail.com" :
+    {
+        "password" : "FFff1488",
+        "notes" : 
+        [
+            "Sample Task To Do Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do",
+            "Sample Task To Do",
+            "Sample Task To Do Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do Sample Task To Do Sample Task To Do Sample Task To Do Sample Task To Do",
+            "Sample Task To Do Sample Task To Do Sample Task To Do"
+        ],
+        
+        "done": 
+        [
+            "Note That Is Already Done",
+            "Note That Is Already Done",
+            "Note That Is Already Done",
+            "Note That Is Already Done"
+        ]
+    }
+}
