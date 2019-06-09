@@ -1,34 +1,62 @@
-const notes = document.getElementById('notes');
-
 fetch('notes').then((res) => {
   if (res.status == 200) {
     res.json().then((data) => {
-      //refresh(data);
-      asign(data);
+      notesObj.asign(data);
     });
   }
 });
 
-const asign = (data) => {
-  console.log(data.notes);
-  data.notes.forEach((noteText, index) => {
+const notesObj = {
+  data: {},
+  asign: function(_data) {
+    this.data = _data;
+    this.data.notes.forEach((noteText) => {
+      const note = document.createElement('div');
+      note.classList.add('note');
+
+      const p = document.createElement('p');
+      const textNode = document.createTextNode(noteText);
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+
+      checkbox.addEventListener('change', (e) => this.removeNote(e));
+
+      p.appendChild(checkbox);
+      p.appendChild(textNode);
+
+      note.appendChild(p);
+
+      notes.appendChild(note);
+    });
+  },
+  removeNote: function(e) {
+    e.target.parentNode.parentNode.classList.add('checked');
+    e.target.disabled = true;
+
+    setTimeout(() => {
+      const index = Array.from(notes.children).indexOf(
+          e.target.parentNode.parentNode
+      );
+      notes.removeChild(e.target.parentNode.parentNode);
+      this.data.done.push(this.data.notes.splice(index, 1)[0]);
+
+      this.refreshNotes();
+    }, 1000);
+  },
+  addNote: function(text) {
+    this.data.notes.push(text);
+
     const note = document.createElement('div');
     note.classList.add('note');
 
     const p = document.createElement('p');
-    const textNode = document.createTextNode(noteText);
+    const textNode = document.createTextNode(text);
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
 
-    checkbox.addEventListener('change', e => {
-      e.target.parentNode.parentNode.classList.toggle('checked');
-      setTimeout(() => {
-        let index = Array.from(notes.children).indexOf(e.target.parentNode.parentNode);
-        notes.removeChild(e.target.parentNode.parentNode);
-        data.notes.splice(index, 1);
-      }, 1000);
-    });
+    checkbox.addEventListener('change', (e) => this.removeNote(e, this.data));
 
     p.appendChild(checkbox);
     p.appendChild(textNode);
@@ -36,51 +64,15 @@ const asign = (data) => {
     note.appendChild(p);
 
     notes.appendChild(note);
-  });
-}
 
-
-
-
-const refresh = (data) => {
-
-  //while (notes.firstChild) notes.removeChild(notes.firstChild);
-
-  /*
-  data.notes.forEach((noteText, index) => {
-    const note = document.createElement('div');
-    note.classList.add('note');
-
-    const p = document.createElement('p');
-    const textNode = document.createTextNode(noteText);
-
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-
-    checkbox.addEventListener('change', (index, data) => {
-      noteIsChecked(index, data);
+    this.refreshNotes();
+  },
+  refreshNotes: function() {
+    fetch('update', {
+      method: 'POST',
+      body: JSON.stringify(this.data),
+    }).then((res) => {
+      if (res.status === 500) alert(res.statusText);
     });
-
-    p.appendChild(checkbox);
-    p.appendChild(textNode);
-
-    note.appendChild(p);
-
-    notes.appendChild(note);
-  });
-  */
-}
-/*
-const noteIsChecked = (index, data) => {
-  const notes = document.getElementsByClassName('note');
-
-  notes[index].classList.toggle('checked');
-  setTimeout(() => {
-    if (!notes[index].classList.contains('checked')) return;
-    notes[index].classList.toggle('done');
-    data.notes.splice(index, 1);
-    refresh(data);
-    console.log(data.notes);
-  }, 700);
+  },
 };
-*/

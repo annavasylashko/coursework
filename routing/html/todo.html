@@ -1,20 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>ToDo List</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div id="container">
-        <div id="list-header">
-            <h1>My ToDo list</h1>
-        </div>
-        <div id="notes"></div>
+      <div id="pop-up" class="disable display-none">
+        <i class="material-icons" id="close">close</i>
+        <textarea id="new-note" autofocus="autofocus"></textarea>
+      </div>
+      <div id="list-header">
+        <h1>My ToDo list</h1>
+      </div>
+      <div id="notes"></div>
+      <i class="material-icons" id="add-note">add_circle_outline</i>
     </div>
+    <script>
+      const addNote = document.getElementById("add-note");
+      const notes = document.getElementById("notes");
+      const popUp = document.getElementById("pop-up");
+      const close = document.getElementById("close");
+      const newNote = document.getElementById("new-note");
 
+      addNote.addEventListener("click", () => {
+        popUp.classList.remove("display-none");
+        setTimeout(() => {
+          popUp.classList.remove("disable");
+          newNote.value = "";
+        }, 50);
+      });
+      close.addEventListener("click", () => {
+        popUp.classList.add("disable");
+        setTimeout(() => {
+          popUp.classList.add("display-none");
+          newNote.value = "";
+        }, 300);
+      });
+      newNote.addEventListener("keydown", e => {
+        if (e.keyCode === 13 && newNote.value.length) {
+          notesObj.addNote(newNote.value);
+          close.click();
+        }
+      });
+    </script>
     <script src="todo.js"></script>
-</body>
+  </body>
 </html>
