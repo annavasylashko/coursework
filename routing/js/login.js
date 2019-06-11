@@ -1,8 +1,5 @@
 signIn.addEventListener('click', () => {
-  document.cookie = `email=${email.value}`;
-  document.cookie = `password=${password.value}`;
-
-  fetch('user', {
+  fetch('/login', {
     headers: {
       'Content-Type': 'application/json',
     },
@@ -13,7 +10,7 @@ signIn.addEventListener('click', () => {
     }),
   }).then((res) => {
     if (res.status === 200) {
-      window.location.replace('/todo.html');
+      window.location.replace('/routing/html/todo.html');
     } else {
       alert('Login or password is incorrect. Try again');
     }

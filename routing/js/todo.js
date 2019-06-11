@@ -1,4 +1,6 @@
-fetch('notes').then((res) => {
+fetch('/notes', {
+  credentials: 'include',
+}).then((res) => {
   if (res.status == 200) {
     res.json().then((data) => {
       notesObj.asign(data);
@@ -68,7 +70,7 @@ const notesObj = {
     this.refreshNotes();
   },
   refreshNotes: function() {
-    fetch('update', {
+    fetch('/updateNotes', {
       method: 'POST',
       body: JSON.stringify(this.data),
     }).then((res) => {
