@@ -22,11 +22,20 @@ const users = {
   },
 };
 
+// fsPromises
+//   .writeFile(`${__dirname}/users/users.json`)
+//   .then((data) => //work with data)
+//   .catch((err) => //deal with error);
+
 const parseCookies = (cookies) => {
+  // cookies: 'coockie1name=cookie1value; cookie2name=cookie2value'
   const list = {};
   cookies.split(';').forEach((cookie) => {
+    // cookie: 'cookie1name=cookie1value
     const parts = cookie.split('=');
+    // parts: ['cookie1name', 'cookie1value']
     list[parts.shift().trim()] = parts[0];
+    // list: {'cookie1name': 'cookie1value'}
   });
   return list;
 };
@@ -133,13 +142,10 @@ const routing = {
   },
 };
 
-const router = (req, res) => {
+const server = http.createServer((req, res) => {
   routing.hasOwnProperty(req.url)
     ? routing[req.url](req, res)
     : routing['default'](req, res);
-};
-const server = http.createServer((req, res) => {
-  router(req, res);
 });
 
 server.listen(port, hostname, () => {
