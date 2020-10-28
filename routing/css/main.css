@@ -1,0 +1,226 @@
+.watermark {
+    display: none;
+  }
+  .shadow {
+    display: none;
+  }
+  
+  html {
+    background: url(/routing/img/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  body img {
+    display: none;
+  }
+  
+  .main {
+    opacity: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 70%;
+    height: 30rem;
+    margin-left: 18%;
+    color: white;
+  }
+  
+  .welcome {
+    padding-top: 2rem;
+    font-size: 2.5rem;
+    font-family: "Times New Roman", Times, serif;
+  
+    margin-top: 0;
+    text-align: left;
+  }
+  
+  .quote {
+    border-left: white;
+    border-style: solid;
+    border-top: transparent;
+    border-bottom: transparent;
+    border-right: transparent;
+    border-width: 0.2rem;
+    width: 19rem;
+  }
+  
+  .saying {
+    margin-left: 0.5rem;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .name {
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+    margin-top: 0.2rem;
+    margin-right: 1rem;
+  }
+  
+  .button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.5rem 2rem;
+    outline: none;
+    display: block;
+    text-decoration: none;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .button.primary {
+    margin-bottom: 1rem;
+    background-color: white;
+    color: rgb(48, 48, 48);
+  }
+  
+  .button.secondary {
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    border-width: 0.12rem;
+    border-style: solid;
+  }
+  
+  @media (min-width: 800px) {
+    html {
+      background: none;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    body {
+      background-color: rgb(243, 243, 243);
+    }
+  
+    .watermark {
+      display: flex;
+      font-weight: 800;
+      font-size: 15rem;
+      font-family: Arial, Helvetica, sans-serif;
+      opacity: 2%;
+      color: rgb(37, 53, 38);
+      z-index: 1;
+      position: absolute;
+      top: -15rem;
+      left: 20rem;
+    }
+    .shadow {
+      display: flex;
+      margin-top: 2rem;
+      margin-left: 3rem;
+      width: 20rem;
+      height: 25rem;
+      background-color: rgb(48, 48, 48);
+      z-index: 2;
+      position: absolute;
+    }
+  
+    body img {
+      opacity: 100%;
+      display: flex;
+      margin-top: 6rem;
+      margin-left: 6rem;
+      width: 19rem;
+      height: 24rem;
+      background-color: rgb(209, 188, 168);
+      z-index: 3;
+      position: absolute;
+    }
+  
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      width: 23rem;
+      height: 25rem;
+      margin-left: 26rem;
+      margin-top: 0;
+    }
+  
+    .welcome {
+      padding-top: 8rem;
+      font-size: 3rem;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(75, 97, 84);
+      margin-top: 0;
+      text-align: left;
+    }
+  
+    .quote {
+      border-left: rgb(92, 137, 42);
+      border-style: solid;
+      border-top: transparent;
+      border-bottom: transparent;
+      border-right: transparent;
+      border-width: 0.2rem;
+    }
+  
+    .saying {
+      margin-left: 1rem;
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.5rem;
+      color: rgb(48, 48, 48);
+      width: 40rem;
+    }
+  
+    .name {
+      text-align: right;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      margin-right: 0;
+      color: rgb(48, 48, 48);
+    }
+  
+    .button {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      text-align: center;
+      padding: 0.5rem 2rem;
+      outline: none;
+      display: block;
+      text-decoration: none;
+    }
+  
+    .buttons {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .button.primary {
+      margin-bottom: 0;
+      margin-right: 1.3rem;
+      background-color: rgb(48, 48, 48);
+      color: rgb(223, 223, 223);
+    }
+  
+    .button.secondary {
+      color: rgb(48, 48, 48);
+      background-color: rgb(243, 243, 243);
+      border-color: rgb(48, 48, 48);
+      border-width: 0.12rem;
+      border-style: solid;
+    }
+  }
+  
+  @media (min-width: 1000px) {
+    .main {
+      width: 25rem;
+      margin-left: 50%;
+    }
+  }
+  

@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href=" /routing/css/register.css" />
     <title>Sign Up</title>
-  </head>
-  <body>
-    <input type="email" id="email-input" />
-    <input type="password" id="password-input" />
-    <input type="password" id="password-input2" />
-    <button id="sign-up">Sign up</button>
-  </body>
-  <script>
+</head>
+
+
+<body>
+    <p class="watermark">organize</p>
+    <div class="shadow"></div>
+    <img src=" /routing/img/main.jpg" />
+
+    <div class="main">
+        <label class="enter">Please enter your email and password</label>
+        <label class="tiny">email</label>
+        <input placeholder="example@gmail.com" class="email" type="email" id="email-input" />
+        <label class="tiny">password</label>
+        <input placeholder="pass123" class="password" type="password" id="password-input" />
+        <label class="confirm">Confirm your password</label>
+        <input class="password" type="password" id="password-input2" />
+        <button class="button" id="sign-up">Sign up</button>
+    </div>
+</body>
+
+<script>
     const email = document.getElementById("email-input");
     const password = document.getElementById("password-input");
     const password2 = document.getElementById("password-input2");
     const signUp = document.getElementById("sign-up");
-  </script>
-  <script src="/routing/js/register.js"></script>
+</script>
+
+<script src=" /routing/js/register.js"></script>
+
 </html>
